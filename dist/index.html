@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"> 
+    <!-- Your styles -->
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <nav class="navigation">
+            <ul>
+              <li class="ativo"><a href="/overview">Overview</a></li>
+              <li><a href="/story">Story</a></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+          </nav>
+          <div class="nav_ctrl">
+              <div class="menu">
+                <button data-toggle="menu">
+                  <i class="material-icons">translate</i>
+                </button>
+                <div class="menu_box">
+                  <ul>
+                    <li>Portugues</li>
+                    <li>Inglês</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="btn_icon search">
+                <i class="material-icons">search</i>
+              </div>
+          </div>
+        </div>
+      </header>
+   
+      <section class="wrapper_content">
+        <div class="container">
+          <div class="main_text">
+            <h4 id="main_title"></h4>
+            <p id="main_desc"></p>
+          </div>
+          <div class="btn_group_hero">
+            <button class="btn" id="sing_up"></button>
+            <button class="btn" id="btn_reader"></button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Features:start -->
+      
+      <section class="features">
+        <div class="feature_title">
+          <h4 id="feat_title"></h4>
+        </div>
+        <div class="feature_container">
+          
+          <div class="feature_card">
+            <div class="icon_feature">
+              <i class="material-icons" id="card_icon_1"></i>
+            </div>
+            <div class="title_feature" id="card_title_1"></div>
+            <div class="desc_feature" id="card_desc_1"></div>
+          </div>
+          
+          <!-- Teste com mais de uma -->
+          
+          <div class="feature_card">
+            <div class="icon_feature">
+              <i class="material-icons" id="card_icon_2"></i>
+            </div>
+            <div class="title_feature" id="card_title_2"></div>
+            <div class="desc_feature" id="card_desc_2"></div>
+          </div>
+          
+          <!-- Teste com mais de uma -->
+          
+          <div class="feature_card">
+            <div class="icon_feature">
+              <i class="material-icons" id="card_icon_3"></i>
+            </div>
+            <div class="title_feature" id="card_title_3"></div>
+            <div class="desc_feature" id="card_desc_3"></div>
+          </div>
+          
+          <!-- Teste com mais de uma -->
+          
+          <div class="feature_card">
+            <div class="icon_feature">
+              <i class="material-icons" id="card_icon_4"></i>
+            </div>
+            <div class="title_feature" id="card_title_4"></div>
+            <div class="desc_feature" id="card_desc_4"></div>
+          </div>
+          
+        </div>
+      </section>
+      
+      <!-- Features:end -->
+      
+      <section id="second_news" class="wrapper_content">
+        <!-- site content -->
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./bundle.js"></script>
+    <script>
+      const lang = navigator.language;
+
+      axios.get('strings/' + lang + '.json')
+        .then(function(res){
+
+          document.title = res.data.title_page;
+          document.getElementById('main_title').appendChild(document.createTextNode(res.data.main_section.title));
+          document.getElementById('main_desc').appendChild(document.createTextNode(res.data.main_section.desc));
+          document.getElementById('sing_up').appendChild(document.createTextNode(res.data.main_section.buttons.signup));
+          document.getElementById('btn_reader').appendChild(document.createTextNode(res.data.main_section.buttons.reader));
+
+        })
+    </script>
+    <!-- endbuild -->
+
+    <!-- Built with love using Web Starter Kit -->
+  </body>
+</html>

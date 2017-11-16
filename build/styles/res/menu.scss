@@ -2,7 +2,7 @@
 
 .menu{
   position: relative;
-  & button[data-toggle="menu"]{
+  & *[data-toggle="menu"]{
     width: $height-header;
     height: $height-header;
     display: flex;

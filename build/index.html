@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"> 
     <!-- Your styles -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/style.css">
   </head>
   <body>
 
@@ -117,11 +117,11 @@
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./bundle.js"></script>
     <script>
+      
       const lang = navigator.language;
 
-      axios.get('strings/' + lang + '.json')
+      axios.get('assets/strings/' + lang + '.json')
         .then(function(res){
 
           document.title = res.data.title_page;

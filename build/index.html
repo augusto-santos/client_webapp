@@ -48,15 +48,7 @@
       </header>
    
       <section class="wrapper_content">
-        <div class="container">
-          <div class="main_text">
-            <h4 id="main_title"></h4>
-            <p id="main_desc"></p>
-          </div>
-          <div class="btn_group_hero">
-            <button class="btn" id="sing_up"></button>
-            <button class="btn" id="btn_reader"></button>
-          </div>
+        <div class="pt_hero_content" style="background: url('http://www.edencreative.co.uk/wp-content/uploads/2015/09/eden-header-mac.jpg') no-repeat; background-size: cover;">
         </div>
       </section>
       
@@ -125,11 +117,11 @@
         .then(function(res){
 
           document.title = res.data.title_page;
-          document.getElementById('main_title').appendChild(document.createTextNode(res.data.main_section.title));
+          /* document.getElementById('main_title').appendChild(document.createTextNode(res.data.main_section.title));
           document.getElementById('main_desc').appendChild(document.createTextNode(res.data.main_section.desc));
           document.getElementById('sing_up').appendChild(document.createTextNode(res.data.main_section.buttons.signup));
           document.getElementById('btn_reader').appendChild(document.createTextNode(res.data.main_section.buttons.reader));
-
+ */
         })
     </script>
     <!-- endbuild -->

@@ -5,16 +5,8 @@ import Menu from './menu'
 import '../index.html'
 import '../about.html'
 
-
-
 // stylesheet for compilation
 import '../styles/main.scss'
-
-const location = history.location
-history.listen((location, action) => {
-  console.log('location: ' + location.pathname)
-  console.log('action: ' + action)
-})
 
 // link on click without refresh
 const anchor = document.getElementsByTagName('a')
